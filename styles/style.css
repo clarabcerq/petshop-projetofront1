@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+:root { /*root é uma pseudoclasse usada para definir variáveis globais*/
+    --marrom: #A46E3D;
+
+    --fonte-kronaone: "Krona One", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+}
+
+* { /*tirando a configuração padrão que vem em todas as páginas web para termos mais controle da nossa página*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*height: 100vh; definindo que quero que este item (body) ocupe 100% da página*/
+    box-sizing: border-box;
+    background-color: #FFFFCC;
+    color: black; /*muda a cor do texto*/
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 5%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 40px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--font-montserrat);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--marrom);
+    text-decoration: none; /*remove estilizações padrão*/
+}
+
+.apresentacao {
+    padding: 2% 5%;
+    display: flex; /*por padrão o flexbox coloca os elementos no sentido de linha (na horizontal ou vertical), essa configuração colocamos no lemento pai dos elementos que queremos posicionar*/
+    align-items: center; /*vai alinhar todos os itens baseado no item de maior altura*/
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.apresentacao__conteudo {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.img1 {
+    border-radius: 5%;
+    width: 48%;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 1.56rem; /*o rem é uma medida relativa e cada rem vale 16px, utilizando o rem ao mudar o tamanho da fonte da página em configuração > aparência da página ele vai acompanhar o tamanho, responsividade*/
+    font-family: var(--fonte-kronaone);
+}
+
+.titulo-destaque {
+    color: var(--marrom);
+}
+
+.apresentacao__conteudo__parag {
+    font-size: 0.93rem;
+    font-family: var(--font-montserrat);
+}
+
+.apresentacao__conteudo__subtitulo {
+    font-family: var(--fonte-kronaone);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__conteudo__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+}
+
+.apresentacao__conteudo__links__navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    border: 2px solid var(--marrom);
+    color: black;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.13rem;
+    padding: 21.5px 0; /*primeiro número é sobre o eixo vertical e o segundo horizontal*/
+    text-decoration: none;
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.apresentacao__conteudo__links__navegacao:hover {
+    background-color: var(--marrom);
+}
+
+.apresentacao__conteudo__links__navegacao img {
+    object-fit: contain;
+    width: 26px;
+}
+
+.apresentacao img {
+    max-width: 50%; /* Limita a largura máxima da imagem a 50% do contêiner*/
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.apresentacao section {
+    width: 50%; /* Define a largura da seção para 45% do contêiner principal*/
+}
+
+.rodape {
+    padding: 20px;
+    background-color: #e0c134;
+    text-align: center;
+    font-family: var(--font-montserrat);
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/*media é uma utilidade já do css que é responsável por organizar os elementos da página numa versão mobile*/
+@media (max-width: 678px) { /*a condição é que se tiver no máximo 1200px de largura de tela é para a nova configuração entrar em cena, se passar de 1200 é para assumir a configuração de tela de computador*/
+    .cabecalho {
+        padding: 7%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+    
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 2%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+
+}
